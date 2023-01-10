@@ -3,7 +3,7 @@
     <h5 :class="{completed: todo.completed}" @click="toggleTodoStatus(todo)" v-if="!todo.inEditMode">
       {{ todo.title }}
     </h5>
-    <input type="text" v-if="todo.inEditMode" v-model="todo.title">
+    <input type="text" v-if="todo.inEditMode" v-model="todo.title" @keyup.enter="editTodo(todo)">
     <button class="btn btn-success"  @click="editTodo(todo)">EDIT</button>
     <button class="btn btn-danger" @click="deleteTodo(todo)">DELETE</button>
   </div>

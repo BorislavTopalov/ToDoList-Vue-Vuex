@@ -4,6 +4,7 @@ import TodoForm from "@/components/TodoForm.vue";
 import "bootstrap/dist/css/bootstrap.css";
 import {mapGetters} from "vuex";
 import "../src/assets/style.scss"
+
 export default {
   name: "App",
   components: {

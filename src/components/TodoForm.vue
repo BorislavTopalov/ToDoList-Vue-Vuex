@@ -6,18 +6,24 @@
 </template>
 
 <script>
-import "../assets/style.scss"
+import "../assets/style.scss";
+import {ref} from "vue";
+import {useStore} from "vuex";
+
 export default {
   name: "TodoForm",
-  data() {
-    return {
-      newTodo: ""
+  setup() {
+    const newTodo = ref("");
+    const store = useStore();
+
+    function addNewTodo() {
+      store.dispatch("addNewTodoItem", newTodo.value);
+      newTodo.value = "";
     }
-  },
-  methods: {
-    addNewTodo() {
-      this.$store.dispatch("addNewTodoItem" ,this.newTodo);
-      this.newTodo = "";
+
+    return {
+      newTodo,
+      addNewTodo
     }
   }
 }

@@ -1,23 +1,29 @@
-#app{
+$primary-color: khaki;
+
+#app {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-  background-color: aqua;
+  background-color: $primary-color;
   width: 100vw;
   height: 100vh;
+
   button {
     margin: 0 20px;
   }
+
   h1 {
     margin-bottom: 40px;
   }
 }
+
 .todo-form {
   display: flex;
   flex-direction: row;
   margin: 20px 0;
 }
+
 .todo {
   margin: 20px 0;
   display: flex;
